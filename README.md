@@ -1,4 +1,4 @@
-# Includes colab notebook, trained model, final embeddings and faiss index.
+# Includes colab notebook, failed api file
 Major issues : couldnt get fastapi to load properly, both through the cors middleware route and from colab cell itself, not familiar enough with cli to implement
              : Hybrid search kept bugging out when used to train the model, so normal search implemented, but hybrid search can be accessed separately through the cells, the search itself is fully functional
              : all metrics are really low as there are qrels for all 8.8M queries, I have a subset of 100K
@@ -7,8 +7,8 @@ Major issues : couldnt get fastapi to load properly, both through the cors middl
              : Many of the libraries are new to me
              : Very honest, debugging is almost 60% claude, i couldnt understand the libraries well enough to actually fix all the issues in this small timeframe
 Instructions to run:
-  The saved files should work, so just import the dataset and mount to drive. Or download and import to colab, and copy the path into the load area. Use the saved presets for embedding and index creation.
+  It says files are too big to upload to github, so I will add the embeddings and pickle files as a zip file. 
   I dont have a full frontend, depending on when you guys see this I may have fastapi actually working, but primarily, the last cell serves as a sort of interface, it gives the rankings and the document of the query
-  worst case, you may have to run all the cells, on gpu runtime it takes about 20 minutes, please dont use cpu run time.
+  worst case, you may have to run all the cells, on T4 gpu runtime it takes about 20 minutes, please dont use cpu run time.
   
   
