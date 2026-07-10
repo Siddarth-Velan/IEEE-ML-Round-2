@@ -35,6 +35,14 @@ def client() -> TestClient:
     return TestClient(app)
 
 
+def test_root_lists_endpoints(client: TestClient) -> None:
+    resp = client.get("/")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["service"] == "semsearch"
+    assert body["endpoints"]["health"] == "/healthz"
+
+
 def test_healthz_shape(client: TestClient) -> None:
     resp = client.get("/healthz")
     assert resp.status_code == 200

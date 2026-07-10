@@ -125,6 +125,19 @@ def _get_engine(request: Request):
     return engine
 
 
+@app.get("/")
+def root() -> dict:
+    """Landing endpoint: point callers at the real routes and the docs."""
+    return {
+        "service": "semsearch",
+        "endpoints": {
+            "health": "/healthz",
+            "search": "POST /search",
+            "docs": "/docs",
+        },
+    }
+
+
 @app.get("/healthz")
 def healthz(request: Request) -> dict:
     """Liveness + corpus metadata.
