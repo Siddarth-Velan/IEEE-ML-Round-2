@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+data/
+artifacts/
+reports/
+.pytest_cache/
+uvicorn.log

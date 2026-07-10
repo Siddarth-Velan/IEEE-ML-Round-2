@@ -1,0 +1,29 @@
+[project]
+name = "semsearch"
+version = "1.0.0"
+description = "Semantic search engine over BEIR datasets: dense (MiniLM+FAISS), BM25, and hybrid retrieval with FastAPI + Streamlit"
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "sentence-transformers",
+    "faiss-cpu",
+    "rank-bm25",
+    "numpy",
+    "fastapi",
+    "uvicorn",
+    "streamlit",
+    "requests",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
