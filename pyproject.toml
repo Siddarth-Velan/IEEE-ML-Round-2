@@ -27,3 +27,6 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# Put the repo root on sys.path so `app` (a namespace package) imports whether
+# pytest is run as `pytest` or `python -m pytest`.
+pythonpath = ["."]
